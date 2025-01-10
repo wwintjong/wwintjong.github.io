@@ -1,0 +1,175 @@
+/* Resetting margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Animated Background */
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    background: linear-gradient(0deg, navy, orange);
+    background-size: 100% 200%; /* Ensures the gradient is twice the height of the viewport */
+    animation: gradientShift 10s linear infinite; /* Applies the animation */
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Gradient Animation */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 100%; /* Start at the bottom */
+    }
+    50% {
+        background-position: 0% 0%; /* Move to the top */
+    }
+    100% {
+        background-position: 0% 100%; /* Return to the bottom */
+    }
+}
+
+/* Header and Navigation styling */
+header {
+    background: rgba(0, 0, 50, 0.8);
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: orange;
+}
+
+/* Hero Section */
+#hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+}
+
+/* Section Styling */
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+section p {
+    font-size: 1rem;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    line-height: 1.5;
+}
+
+.project {
+    margin: 20px auto;
+    padding: 15px;
+    max-width: 400px;
+    background: rgba(0, 0, 50, 0.7);
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.project h3 {
+    margin-bottom: 10px;
+    color: orange;
+}
+
+.project a {
+    color: orange;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.project a:hover {
+    color: white;
+}
+
+/* Footer Styling */
+footer {
+    background: rgba(0, 0, 50, 0.8);
+    padding: 10px 0;
+    text-align: center;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+/* Typing Effect */
+.typing {
+    display: inline-block;
+    white-space: nowrap; /* Prevent wrapping */
+    overflow: hidden; /* Hide the text that overflows */
+    border-right: 3px solid white; /* Create a cursor effect */
+    animation: typing 4s steps(30, end), blink 0.5s step-end infinite;
+}
+
+/* Typing Animation */
+@keyframes typing {
+    from {
+        width: 0; /* Start with no text */
+    }
+    to {
+        width: 100%; /* Reveal full text */
+    }
+}
+
+/* Blinking Cursor Animation */
+@keyframes blink {
+    from, to {
+        border-color: transparent; /* Hide the cursor */
+    }
+    50% {
+        border-color: white; /* Show the cursor */
+    }
+}
