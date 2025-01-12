@@ -5,28 +5,14 @@
     box-sizing: border-box;
 }
 
-/* Animated Background */
+/* Static Background Image */
 body {
     font-family: Arial, sans-serif;
     color: white;
-    background: linear-gradient(0deg, navy, orange);
-    background-size: 100% 200%; /* Ensures the gradient is twice the height of the viewport */
-    animation: gradientShift 10s linear infinite; /* Applies the animation */
+    background: url('images/landscape2.jpg') no-repeat center center fixed; /* Add the background image */
+    background-size: cover; /* Ensure the image covers the entire screen */
     min-height: 100vh;
     margin: 0;
-}
-
-/* Gradient Animation */
-@keyframes gradientShift {
-    0% {
-        background-position: 0% 100%; /* Start at the bottom */
-    }
-    50% {
-        background-position: 0% 0%; /* Move to the top */
-    }
-    100% {
-        background-position: 0% 100%; /* Return to the bottom */
-    }
 }
 
 /* Header and Navigation styling */
