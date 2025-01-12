@@ -9,7 +9,7 @@
 body {
     font-family: Arial, sans-serif;
     color: white;
-    background: url('images/landscape2.jpg') no-repeat center center fixed; /* Add the background image */
+    background: url('/images/landscape2.jpg') no-repeat center center fixed; /* Add the background image */
     background-size: cover; /* Ensure the image covers the entire screen */
     min-height: 100vh;
     margin: 0;
