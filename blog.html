@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Win Win Tjong - Blog">
+    <meta name="author" content="Win Win Tjong">
+    <title>Blog - Win Win Tjong</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav__logo">
+                <span>Win Win Tjong</span>
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="index.html" class="nav__link">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="projects.html" class="nav__link">Projects</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="about.html" class="nav__link">About</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="blog.html" class="nav__link active-link">Blog</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="contact.html" class="nav__link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav__toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <section class="page page--active">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Blog</h1>
+                    <p>Thoughts, tutorials, and project updates</p>
+                </div>
+
+                <div class="blog-content">
+                    <div class="blog-filters">
+                        <input type="search" class="blog-search" placeholder="Search articles...">
+                        <div class="blog-categories">
+                            <button class="category-btn category-btn--active" data-category="all">All</button>
+                            <button class="category-btn" data-category="react">React</button>
+                            <button class="category-btn" data-category="career">Career</button>
+                            <button class="category-btn" data-category="css">CSS</button>
+                        </div>
+                    </div>
+
+                    <div class="blog-posts">
+                        <article class="blog-post" data-category="react">
+                            <div class="blog-post__date">October 1, 2024</div>
+                            <h3 class="blog-post__title">
+                                <a href="#">Building Scalable React Applications</a>
+                            </h3>
+                            <p class="blog-post__excerpt">
+                                Learn best practices for structuring React applications that can grow with your team and user base.
+                            </p>
+                            <div class="blog-post__meta">
+                                <span class="blog-post__category">CSS</span>
+                                <span class="blog-post__read-time">6 min read</span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Win Win Tjong</h3>
+                    <p>Hardware Engineer &amp; Maker</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-social">
+                        <a href="https://linkedin.com/in/winwintjong" target="_blank">LinkedIn</a>
+                        <a href="https://github.com/winwintjong" target="_blank">GitHub</a>
+                        <a href="https://twitter.com/winwintjong" target="_blank">Twitter</a>
+                        <a href="mailto:winwin@example.com">Email</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Win Win Tjong. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="navigation.js"></script>
+    <script>
+        // Blog search and filtering
+        const searchInput = document.querySelector('.blog-search');
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        const blogPosts = document.querySelectorAll('.blog-post');
+        
+        // Search functionality
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                filterPosts(searchTerm, null);
+            });
+        }
+        
+        // Category filter functionality
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const category = button.getAttribute('data-category');
+                
+                // Update active button
+                categoryButtons.forEach(btn => btn.classList.remove('category-btn--active'));
+                button.classList.add('category-btn--active');
+                
+                // Reset search
+                if (searchInput) {
+                    searchInput.value = '';
+                }
+                
+                // Filter posts
+                filterPosts(null, category);
+            });
+        });
+        
+        function filterPosts(searchTerm, category) {
+            blogPosts.forEach(post => {
+                const title = post.querySelector('.blog-post__title').textContent.toLowerCase();
+                const excerpt = post.querySelector('.blog-post__excerpt').textContent.toLowerCase();
+                const postCategory = post.getAttribute('data-category');
+                
+                let showPost = true;
+                
+                // Apply search filter
+                if (searchTerm && searchTerm.trim() !== '') {
+                    showPost = title.includes(searchTerm) || excerpt.includes(searchTerm);
+                }
+                
+                // Apply category filter
+                if (category && category !== 'all') {
+                    showPost = showPost && postCategory === category;
+                }
+                
+                post.style.display = showPost ? 'block' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>React</span>
+                                <span class="blog-post__read-time">5 min read</span>
+                            </div>
+                        </article>
+                        <article class="blog-post" data-category="career">
+                            <div class="blog-post__date">September 15, 2024</div>
+                            <h3 class="blog-post__title">
+                                <a href="#">My Journey into Full Stack Development</a>
+                            </h3>
+                            <p class="blog-post__excerpt">
+                                Reflections on transitioning from frontend to full stack development and the challenges I faced along the way.
+                            </p>
+                            <div class="blog-post__meta">
+                                <span class="blog-post__category">Career</span>
+                                <span class="blog-post__read-time">8 min read</span>
+                            </div>
+                        </article>
+                        <article class="blog-post" data-category="css">
+                            <div class="blog-post__date">August 30, 2024</div>
+                            <h3 class="blog-post__title">
+                                <a href="#">Modern CSS Techniques for Responsive Design</a>
+                            </h3>
+                            <p class="blog-post__excerpt">
+                                Exploring CSS Grid, Flexbox, and container queries for creating truly responsive web layouts.
+                            </p>
+                            <div class="blog-post__meta">
+                                <span class="blog-post__category">

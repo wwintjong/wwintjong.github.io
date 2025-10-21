@@ -3,64 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Me</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to the provided stylesheet -->
+    <meta name="description" content="Contact Win Win Tjong">
+    <meta name="author" content="Win Win Tjong">
+    <title>Contact - Win Win Tjong</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-            </ul>
+    <!-- Header Navigation -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav__logo">
+                <span>Win Win Tjong</span>
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="index.html" class="nav__link">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="projects.html" class="nav__link">Projects</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="about.html" class="nav__link">About</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="blog.html" class="nav__link">Blog</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="contact.html" class="nav__link active-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav__toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
-    <main id="hero">
-        <h1>Contact Me</h1>
-        <p class="typing">I’d love to hear from you!</p>
+    <!-- Main Content -->
+    <main class="main">
+        <section class="page page--active">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Contact</h1>
+                    <p>Let's work together on your next project</p>
+                </div>
+
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Get In Touch</h3>
+                        <p>
+                            I'm always interested in hearing about new opportunities and interesting projects. 
+                            Whether you have a project in mind or just want to chat about technology, feel free to reach out!
+                        </p>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <strong>Email:</strong>
+                                <a href="mailto:winwin@example.com">winwin@example.com</a>
+                            </div>
+                            <div class="contact-item">
+                                <strong>Location:</strong>
+                                <span>San Francisco, CA</span>
+                            </div>
+                            <div class="contact-item">
+                                <strong>Availability:</strong>
+                                <span>Open to freelance and full-time opportunities</span>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="https://linkedin.com/in/winwintjong" target="_blank" class="social-link">LinkedIn</a>
+                            <a href="https://github.com/winwintjong" target="_blank" class="social-link">GitHub</a>
+                            <a href="https://twitter.com/winwintjong" target="_blank" class="social-link">Twitter</a>
+                        </div>
+                    </div>
+
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" class="form-control" rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--full-width">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <section>
-        <h2>Get in Touch</h2>
-        <p>Feel free to reach out via email, phone, or through the form below.</p>
-        <div class="project">
-            <h3>Contact Information</h3>
-            <ul style="list-style: none; padding: 0;">
-                <li><strong>Email:</strong> <a href="mailto:wwintjong@gmail.com">wwintjong@gmail.com</a></li>
-                <li><strong>Phone:</strong> <a href="tel:+19014856478">+1 (901) 485-6478</a></li>
-                <!-- <li><strong>Address:</strong> 123 Your Street, Your City, Your Country</li> -->
-            </ul>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Win Win Tjong</h3>
+                    <p>Hardware Engineer &amp; Maker</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-social">
+                        <a href="https://linkedin.com/in/winwintjong" target="_blank">LinkedIn</a>
+                        <a href="https://github.com/winwintjong" target="_blank">GitHub</a>
+                        <a href="https://twitter.com/winwintjong" target="_blank">Twitter</a>
+                        <a href="mailto:winwin@example.com">Email</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Win Win Tjong. All rights reserved.</p>
+            </div>
         </div>
-        <div class="project">
-            <h3>Social Media</h3>
-            <ul style="list-style: none; padding: 0;">
-                <!-- <li><a href="https://twitter.com/yourprofile" target="_blank">Twitter</a></li> -->
-                <li><a href="https://linkedin.com/in/wwintjong" target="_blank">LinkedIn</a></li>
-                <li><a href="https://github.com/wwintjong" target="_blank">GitHub</a></li>
-            </ul>
-        </div>
-    </section>
-
-    <section>
-        <h2>Send Me a Message</h2>
-        <form action="https://formspree.io/f/yourformid" method="POST" style="max-width: 400px; margin: auto; text-align: left;">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: none;">
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: none;">
-            
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: none;"></textarea>
-            
-            <button type="submit" style="padding: 10px 20px; background-color: orange; color: navy; border: none; border-radius: 5px; cursor: pointer;">Send</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Your Name. All rights reserved.</p>
     </footer>
+
+    <script src="navigation.js"></script>
+    <script>
+        // Contact form handling
+        const contactForm = document.getElementById('contact-form');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const formData = new FormData(contactForm);
+                const submitButton = contactForm.querySelector('button[type="submit"]');
+                const originalText = submitButton.textContent;
+                
+                submitButton.textContent = 'Sending...';
+                submitButton.disabled = true;
+                
+                // Simulate form submission
+                setTimeout(() => {
+                    submitButton.textContent = 'Message Sent!';
+                    submitButton.style.background = 'var(--color-success)';
+                    
+                    // Reset form
+                    contactForm.reset();
+                    
+                    // Reset button after 3 seconds
+                    setTimeout(() => {
+                        submitButton.textContent = originalText;
+                        submitButton.disabled = false;
+                        submitButton.style.background = '';
+                    }, 3000);
+                    
+                    // Show success message
+                    alert('Thanks for your message! I\'ll get back to you soon.');
+                }, 1500);
+            });
+        }
+    </script>
 </body>
 </html>
