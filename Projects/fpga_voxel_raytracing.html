@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Makey Makey - Project Details</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+     <!-- Header Navigation -->
+     <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav__logo">
+                <a href="index.html" class="logo-link">Win Win Tjong</a>
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="index.html" class="nav__link">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="projects.html" class="nav__link active-link">Projects</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="about.html" class="nav__link">About</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav__toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <section class="page page--active">
+            <div class="container">
+                <div class="page-header">
+                    <h1>FPGA Voxel Raytracing</h1>
+                    <h2></h2>
+                </div>
+
+                <!-- Return Button -->
+                <header class="project-header">
+                    <a href="../projects.html" class="btn btn--outline return-button">&larr; Back to Projects</a>
+                </header>
+
+                <!-- Project Image -->
+                <div class="project-image-center">
+                    <img src="../Images/xilinx_fpga.jpg" alt="Makey Makey Project Image" class="project-detail-image">
+                </div>
+
+                <!-- Body -->
+                <div class="project-body">
+                    <h2>Background</h2>
+                    <p>
+                        
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" class="scroll-top-btn">&#8679;</button>
+
+    <script>
+        // Scroll-to-top functionality
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        window.addEventListener('scroll', () => {
+        scrollTopBtn.classList.toggle('active', window.scrollY > 300);
+        });
+        scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

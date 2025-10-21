@@ -1335,6 +1335,12 @@ textarea.form-control {
   font-size: clamp(var(--font-size-3xl), 5vw, 48px);
 }
 
+.page-header h2 {
+  margin-bottom: var(--space-16);
+  color: white;
+  opacity: 0.5;
+}
+
 .page-header p {
   font-size: var(--font-size-lg);
   color: var(--color-text-secondary);
@@ -1567,7 +1573,7 @@ textarea.form-control {
 }
 
 .project-card__tech span {
-  background: var(--color-bg-5);
+  background: var(--color-bg-8);
   color: var(--color-text-secondary);
   padding: var(--space-4) var(--space-8);
   border-radius: var(--radius-sm);
@@ -2083,4 +2089,176 @@ textarea.form-control {
   font-family: 'FKGroteskNeue';
   src: url('https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2')
     format('woff2');
+}
+
+.project-card {
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Project Page Layout */
+.project-main {
+  max-width: 900px;
+  margin: 3rem auto 5rem;
+  padding: 1rem 2rem;
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  font-family: var(--font-primary);
+  color: var(--color-text-primary);
+}
+
+/* Header (Title + back button) */
+.project-header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: 1rem;
+  margin-bottom: 2rem;
+  position: relative;
+  padding: 0.5rem 1rem;
+}
+
+.back-to-projects {
+  grid-column: 1;
+  justify-self: start;
+  color: var(--color-teal-500);
+  background: none;
+  border: 2px solid var(--color-teal-500);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+  padding: 0.6rem 1.5rem;
+}
+
+.back-to-projects:hover {
+  background-color: var(--color-teal-500);
+  color: var(--color-white);
+}
+
+.project-header h1 {
+  grid-column: 2;
+  justify-self: center;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Content Section */
+.project-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  color: var(--color-text-secondary);
+}
+
+.project-content ul {
+  list-style: disc;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+}
+
+/* Project Image */
+.project-detail-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 2rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* Buttons in Project Content */
+.project-content .btn {
+  margin-right: 1rem;
+  display: inline-block;
+}
+
+.project-content .btn--primary {
+  background-color: var(--color-teal-500);
+  color: var(--color-white);
+  padding: 0.6rem 1.4rem;
+}
+
+.project-content .btn--primary:hover {
+  background-color: var(--color-teal-600);
+}
+
+.project-content .btn--outline {
+  border: 2px solid var(--color-teal-500);
+  color: var(--color-teal-500);
+  padding: 0.6rem 1.4rem;
+}
+
+.project-content .btn--outline:hover {
+  background-color: var(--color-teal-500);
+  color: var(--color-white);
+}
+
+.return-button {
+  position: fixed;
+  top: 100px;   /* Adjust spacing from top */
+  left: 20px;  /* Adjust spacing from left */
+  z-index: 1001;  /* Make sure it's above other content */
+  padding: 0.6rem 1.4rem; /* Match button padding */
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.return-button:hover {
+  background-color: var(--color-teal-500);
+  color: var(--color-white);
+  border-color: var(--color-teal-500);
+}
+
+
+.project-image-center {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.project-detail-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.15);
+  background-color: #ffffff;
+}
+
+.project-body {
+  display: grid;
+  align-items: start;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-48);
+  margin-bottom: var(--space-80);
+}
+
+.project-body h2 {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: var(--font-size-2xl);
+  text-align: left;
+}
+
+.project-body p {
+  color: #ffffff;
+  margin-bottom: var(--space-20);
+  font-size: var(--font-size-2xl);
+  text-indent: 1.5em;
+}
+
+.project-body h3,
+.project-body p {
+  grid-column: 1 / -1; /* span from first to last column */
 }
