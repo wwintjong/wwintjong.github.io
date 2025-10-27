@@ -16,13 +16,13 @@
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
                     <li class="nav__item">
-                        <a href="index.html" class="nav__link">Home</a>
+                        <a href="../index.html" class="nav__link">Home</a>
                     </li>
                     <li class="nav__item">
-                        <a href="projects.html" class="nav__link active-link">Projects</a>
+                        <a href="../projects.html" class="nav__link active-link">Projects</a>
                     </li>
                     <li class="nav__item">
-                        <a href="about.html" class="nav__link">About</a>
+                        <a href="../about.html" class="nav__link">About</a>
                     </li>
                 </ul>
             </div>
@@ -37,16 +37,13 @@
     <!-- Main Content -->
     <main class="main">
         <section class="page page--active">
+            <!-- Return Button -->
+            <a href="javascript:window.history.back();" class="btn btn--outline return-button">Back</a>
             <div class="container">
                 <div class="page-header">
                     <h1>Makey Makey</h1>
                     <h2>A system to track the availability of equipments</h2>
                 </div>
-
-                <!-- Return Button -->
-                <header class="project-header">
-                    <a href="../projects.html" class="btn btn--outline return-button">&larr; Back to Projects</a>
-                </header>
 
                 <!-- Project Image -->
                 <div class="project-image-center">
@@ -55,10 +52,48 @@
 
                 <!-- Body -->
                 <div class="project-body">
-                    <h2>Background</h2>
+                    <h1>Abstract</h1>
                     <p>
-                        Makey Makey was a project for MIT class 6.1820 Mobile and Sensor Computing, which is a class that focuses primarily
-                        on Internet of Things (IoT). 
+                        Makey Makey is a system that utilizes an mmWave radar to send and read millimeter-wavelength signals to detect
+                        changes in the object it is scanning from. We developed this system as a way to detect equipments operating 
+                        status at our school's makerspace because we think that knowing the availability of certain equipments at the
+                        space could save members time from having to traversing far distances across campus. 
+                    </p>
+                    <!-- <h2>Motivation</h2>
+                    <p>
+                        Makey Makey was a project for an MIT class called 6.1820 Mobile and Sensor Computing that focuses on Internet of
+                        Things (IoT). I worked on this project along with a classmate, and this project was our approach in resolving an issue we
+                        encountered frequently when trying to work at one of our school's makerspaces. Specifically, the challenge we were to trying to work
+                        on was how to know in advance when certain equipments like the 3D printers or laser cutters are unavailable because
+                        someone else is using it. Knowing this information in advance could save members time from traversing far distances only to
+                        find out they can't use it right away. My classmate and I decided to proceed with developing a system that could detect
+                        the operating status of different equipments.
+                    </p> -->
+                    <h1>Approach</h1>
+                    <div class="project-body-img">
+                        <img src="../Images/makey_makey_diagram_1.png" alt="Makey Makey Diagram 1" class="project-detail-image">
+                    </div>
+                    <p>
+                        Our system utilizes Texas Instrument's IWR1443BOOST mmWave radar and a DCA1000 along with it. The system starts
+                        out with the radar sending out FMCW pulses directed at the targeted objects, and when these signals reach these
+                        objects, they are reflected back towards the direction of the radar. The DCA1000, which is connected to the 
+                        radar, then collects these FMCW signals and convert them into a much more convenient form to work with. 
+                    </p>
+                    <p>
+                        Once these raw data are collected, we applied FFT and background subtraction to get rid of noises and other 
+                        unwanted readings. What we are left with it are essentially peaks indicating the equipments operating status 
+                        and anything else as rest or off state.
+                    </p>
+                    <div class="project-body-img">
+                        <img src="../Images/makey_makey_diagram_2.png" alt="Makey Makey Diagram 1" class="project-detail-image">
+                    </div>
+                    <h1>Result</h1>
+                    <div class="project-body-img">
+                        <img src="../Images/makey_makey_diagram_3.png" alt="Makey Makey Diagram 1" class="project-detail-image">
+                    </div>
+                    <p>
+                        To test our system, we established a setup as shown in the figure above. The system is placed to the left of 
+                        targeted objects we want to test with and the targeted objects are two desktop CNC milling machines. 
                     </p>
                 </div>
             </div>
@@ -66,7 +101,7 @@
     </main>
 
     <!-- Scroll to Top Button -->
-    <button id="scrollTopBtn" class="scroll-top-btn">&#8679;</button>
+    <!-- <button id="scrollTopBtn" class="scroll-top-btn">&#8679;</button>
 
     <script>
         // Scroll-to-top functionality
@@ -77,6 +112,6 @@
         scrollTopBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-    </script>
+    </script> -->
 </body>
 </html>

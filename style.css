@@ -440,8 +440,8 @@ pre code {
 }
 
 .btn--outline {
-  background: transparent;
-  border: 1px solid var(--color-border);
+  background: var(--color-gray-200-rgb);
+  border: 10px solid white;
   color: var(--color-text);
 }
 
@@ -2205,11 +2205,10 @@ textarea.form-control {
 }
 
 .return-button {
-  position: fixed;
-  top: 100px;   /* Adjust spacing from top */
-  left: 20px;  /* Adjust spacing from left */
-  z-index: 1001;  /* Make sure it's above other content */
-  padding: 0.6rem 1.4rem; /* Match button padding */
+  position: absolute;
+  top: 100px;
+  left: 20px;
+  padding: 0.6rem 1.4rem;
   font-weight: 600;
   border-radius: var(--radius-sm);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -2220,7 +2219,6 @@ textarea.form-control {
   color: var(--color-white);
   border-color: var(--color-teal-500);
 }
-
 
 .project-image-center {
   display: flex;
@@ -2240,25 +2238,36 @@ textarea.form-control {
   display: grid;
   align-items: start;
   grid-template-columns: 1fr 2fr;
-  gap: var(--space-48);
-  margin-bottom: var(--space-80);
+  gap: var(--space-24);
+  margin-bottom: var(--space-40);
 }
 
-.project-body h2 {
-  color: #ffffff;
+.project-body h1 {
+  color: var(--color-teal-500);
   font-weight: bold;
-  font-size: var(--font-size-2xl);
   text-align: left;
 }
 
 .project-body p {
   color: #ffffff;
-  margin-bottom: var(--space-20);
+  /* margin-bottom: var(--space-10); */
   font-size: var(--font-size-2xl);
   text-indent: 1.5em;
 }
 
-.project-body h3,
-.project-body p {
+.project-body h2,
+.project-body p, 
+.project-body h1,
+.project-body-img {
   grid-column: 1 / -1; /* span from first to last column */
+}
+
+.project-body-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+  max-width: 100%;
+  height: auto;
+  width: 800px;
 }
