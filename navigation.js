@@ -54,14 +54,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Project card navigation
 document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('click', () => {
-      const link = card.getAttribute('data-link');
-      if (link) {
-        window.location.href = link;
-      } else {
-        console.warn('No data-link attribute found for this project card');
-      }
+        const link = card.getAttribute('data-link');
+        if (link) {
+            window.location.href = link;
+        } else {
+            console.warn('No data-link attribute found for this project card');
+        }
     });
-  });
+});
+
+// Prevent project card links from triggering card click
+document.querySelectorAll('.project-card__links a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent the click from bubbling to parent card
+    });
+});
   

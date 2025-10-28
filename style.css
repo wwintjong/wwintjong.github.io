@@ -22,6 +22,8 @@
   --color-red-500: rgba(192, 21, 47, 1);
   --color-orange-400: rgba(230, 129, 97, 1);
   --color-orange-500: rgba(168, 75, 47, 1);
+  --color-orange-signature: rgba(255, 105, 0, 1);
+  --color-orange-signature-active: rgba(255, 105, 0, 0.8);
 
   /* RGB versions for opacity control */
   --color-brown-600-rgb: 94, 82, 64;
@@ -42,6 +44,7 @@
   --color-bg-6: rgba(249, 115, 22, 0.08); /* Light orange */
   --color-bg-7: rgba(236, 72, 153, 0.08); /* Light pink */
   --color-bg-8: rgba(6, 182, 212, 0.08); /* Light cyan */
+  --color-bg-9: rgba(255, 105, 0, 0.50);
 
   /* Semantic Color Tokens (Light Mode) */
   --color-background: var(--color-cream-50);
@@ -419,11 +422,11 @@ pre code {
 }
 
 .btn--primary:hover {
-  background: var(--color-primary-hover);
+  background: var(--color-orange-signature-active);
 }
 
 .btn--primary:active {
-  background: var(--color-primary-active);
+  background: var(--color-orange-signature-active);
 }
 
 .btn--secondary {
@@ -440,13 +443,14 @@ pre code {
 }
 
 .btn--outline {
-  background: var(--color-gray-200-rgb);
+  background: var(--color-orange-signature);
   border: 10px solid white;
-  color: var(--color-text);
+  color: var(--color-gray-300-rgb);
 }
 
 .btn--outline:hover {
-  background: var(--color-secondary);
+  background: var(--color-orange-signature);
+  color: white;
 }
 
 .btn--sm {
@@ -1037,17 +1041,18 @@ a:hover {
 }
 
 .btn--primary {
-  background: var(--color-primary);
+  background: var(--color-orange-signature);
   color: var(--color-btn-primary-text);
 }
 
 .btn--primary:hover {
-  background: var(--color-primary-hover);
+  background: var(--color-orange-signature);
   transform: translateY(-1px);
+  color: white;
 }
 
 .btn--primary:active {
-  background: var(--color-primary-active);
+  background: var(--color-orange-signature-active);
   transform: translateY(0);
 }
 
@@ -1065,14 +1070,15 @@ a:hover {
 }
 
 .btn--outline {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.4);
   border: 1px solid var(--color-border);
-  color: var(--color-text);
+  color: var(--color-charcoal-800);
 }
 
 .btn--outline:hover {
-  background: var(--color-secondary);
+  background: rgba(255, 255, 255, 0.5);
   transform: translateY(-1px);
+  color: white;
 }
 
 .btn--sm {
@@ -1186,7 +1192,7 @@ textarea.form-control {
 
 @media (prefers-color-scheme: dark) {
   .header {
-    background-color: rgba(var(--color-teal-500-rgb), 0.95);
+    background-color: var(--color-orange-signature);
   }
 }
 
@@ -1234,7 +1240,7 @@ textarea.form-control {
 
 .nav__link:hover,
 .nav__link.active-link {
-  color: var(--color-primary);
+  color: black;
 }
 
 .nav__link.active-link::after {
@@ -1244,7 +1250,7 @@ textarea.form-control {
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: var(--color-primary);
+  background-color: black;
   border-radius: var(--radius-full);
 }
 
@@ -1376,7 +1382,7 @@ textarea.form-control {
 }
 
 .hero__name {
-  color: var(--color-primary);
+  color: var(--color-orange-signature);
 }
 
 .hero__subtitle {
@@ -1413,12 +1419,12 @@ textarea.form-control {
 .social-button img {
   width: 32px;
   height: 32px;
-  filter: var(--color-white); /* optional tint */
+  filter: var(--color-white); 
   transition: filter 0.3s ease;
 }
 
 .social-button:hover img {
-  filter: var(--color-primary-hover); /* change color on hover */
+  filter: var(--color-primary-hover);
 }
 
 /* Make sure buttons are clickable and accessible */
@@ -1573,7 +1579,7 @@ textarea.form-control {
 }
 
 .project-card__tech span {
-  background: var(--color-bg-8);
+  background: var(--color-bg-9);
   color: var(--color-text-secondary);
   padding: var(--space-4) var(--space-8);
   border-radius: var(--radius-sm);
@@ -1611,9 +1617,9 @@ textarea.form-control {
 
 .filter-btn:hover,
 .filter-btn--active {
-  background: var(--color-primary);
+  background: var(--color-orange-signature);
   color: var(--color-btn-primary-text);
-  border-color: var(--color-primary);
+  border-color: white;
 }
 
 /* About Page */
@@ -2215,7 +2221,7 @@ textarea.form-control {
 }
 
 .return-button:hover {
-  background-color: var(--color-teal-500);
+  background-color: var(--color-orange-signature);
   color: var(--color-white);
   border-color: var(--color-teal-500);
 }
@@ -2243,7 +2249,7 @@ textarea.form-control {
 }
 
 .project-body h1 {
-  color: var(--color-teal-500);
+  color: var(--color-orange-signature);
   font-weight: bold;
   text-align: left;
 }
@@ -2258,7 +2264,8 @@ textarea.form-control {
 .project-body h2,
 .project-body p, 
 .project-body h1,
-.project-body-img {
+.project-body-img,
+.project-video {
   grid-column: 1 / -1; /* span from first to last column */
 }
 
@@ -2270,4 +2277,18 @@ textarea.form-control {
   max-width: 100%;
   height: auto;
   width: 800px;
+}
+
+.project-video {
+  margin: var(--space-32) 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.project-video video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
 }
