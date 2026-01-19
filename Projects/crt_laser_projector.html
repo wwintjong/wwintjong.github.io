@@ -72,7 +72,38 @@
                     </p>
                     <h1>Approach</h1>
                     <p>
-                        Modern display technologies have advanced so far today such that it would be difficult to learn how they work at a basic level. 
+                        While modern display technologies utilize components at the nano-scale nowadays, this was not the case back when this technology 
+                        was still new. Fabrication capabilities for nano-scale components were nonexistant at the time, so the way images were projected 
+                        back then worked differently than today. One type of techniques used to display images is called Cathode Ray Tube (CRT), and the 
+                        way this type of display works is that there is an electron gun that fires electron onto a phosphor screen, where the collision of 
+                        the electron causes the screen to glow. One unique characteristic of CRT display is that images are usually projected in scanlines 
+                        as shown in the following figure.
+                    </p>
+                    <div class="project-body-img">
+                        <img src="../Images/scanline_example.jpeg" alt="Scanline example in CRT display" class="project-body-image">
+                    </div>
+                    <p>
+                        This characteristic is produced because of how the electrons are fired. Instead of firing all electrons instantaneously, which would 
+                        require thousands of electron guns, electrons are fired in a raster pattern, which starts at the top left of the display and moves right 
+                        across a row before moving down and repeats for all rows of the display.
+                    </p>
+                    <div class="project-body-img">
+                        <img src="../Images/raster_pattern.jpeg" alt="Raster pattern" class="project-body-image">
+                    </div>
+                    <p>
+                        With the understanding of this old image projection technique, I decided to replicate this to create my own iteration of display. 
+                        However, buying parts like a CRT and phosphor screen directly is not easy today, and an alternative to obtaining them is to buy 
+                        an old CRT TV to salvage those parts, which in today's time have become expensive. Because I did not want to overspend for this 
+                        project I opted in to use other parts: laser pointer and mirror. These parts became crucial in my development due to a project 
+                        from YouTuber by the name of Ben Makes Everything that inspired me. 
+                    </p>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/u9TpJ-_hBR8?si=O-KDGbMNrA5jgoqa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <p>
+                        In his video, he showed how when the light from a laser is reflected at many different yaw angle (Z-axis), it produces a line of light. 
+                        Pair that with pulse width modulation (PMW) to rapidly turn the laser on and off, and the laser can then display a line of dots. These dots 
+                        can represent a pixel of an image. However, a single line of pixels is not enough to display an image. To produce several lines of pixels 
+                        a second axis of rotation of the mirror is used. Specifically, the pitch (Y-axis) of the mirror is manipulated such that when the light is 
+                        reflected of at a different pitch angle, it is reflected off at a different line. 
                     </p>
                     <h1>Result</h1>
                     <p>
