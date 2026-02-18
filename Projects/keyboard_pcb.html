@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MEMS Spring Orientation</title>
+  <link rel="icon" type="image/x-icon" href="../Images/favicon.ico">
+  <title>Custom Keyboard PCB</title>
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -11,7 +12,7 @@
      <header class="header" id="header">
         <nav class="nav container">
             <div class="nav__logo">
-                <a href="index.html" class="logo-link">Win Win Tjong</a>
+                <a href="../index.html" class="logo-link">Win Win Tjong</a>
             </div>
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
@@ -21,15 +22,15 @@
                                 <path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-123 0-209.5-86.5T364-660q0-20 3-40t8-40q-78 32-126.5 102T200-480q0 116 82 198t198 82Zm-10-270Z">
                             </svg>
                         </a>
-                    </li>  
+                    </li>    
                     <li class="nav__item">
-                        <a href="index.html" class="nav__link">Home</a>
+                        <a href="../index.html" class="nav__link">Home</a>
                     </li>
                     <li class="nav__item">
-                        <a href="projects.html" class="nav__link active-link">Projects</a>
+                        <a href="../projects.html" class="nav__link active-link">Projects</a>
                     </li>
                     <li class="nav__item">
-                        <a href="about.html" class="nav__link">About</a>
+                        <a href="../about.html" class="nav__link">About</a>
                     </li>
                 </ul>
             </div>
@@ -48,87 +49,47 @@
             <a href="../projects.html" class="btn btn--outline return-button">Back</a>
             <div class="container">
                 <div class="page-header">
-                    <h1>MEMS Spring Orientation</h1>
-                    <h2>The connection between orientation and resonance</h2>
+                    <h1>Custom Keyboard PCB</h1>
+                    <h2>A personalized PCB for a keyboard enthusiast</h2>
                 </div>
 
                 <!-- Project Image -->
                 <div class="project-image-center">
-                    <img src="../Images/mems_springs_wafer.png" alt="Makey Makey Project Image" class="project-detail-image">
+                    <img src="../Images/custom_keyboard_pcb.png" alt="Custom Keyboard PCB" class="project-body-image">
                 </div>
 
                 <!-- Body -->
                 <div class="project-body">
-                    <h1>Abstract</h1>
+                    <h1>Intro</h1>
                     <p>
-                        My team and I were motivated to worked on this project because we were curious if the microelectromechanical systems (MEMS) spring's alighnment within a silicon wafer would affect the spring's behavior. We 
-                        believed that this could give a potentially new parameter to tune MEMS spring to a specific resonance to obtainable previously, which could be useful to produce specific sensors. To conduct this 
-                        investigation, we designed our own MEMS springs with varying orientation with respect to traditional orientation. Then we fabricated those springs using specific technique like deep reactive ion 
-                        etching (DRIE) to produce the delicate beams of the springs. We then ran tests with the sample springs to find each uniquely-aligned spring's resonance and compared the varying ones with the control 
-                        design. Our data suggests that there is a connection between the springs' resonances and how they were oriented. 
+                        I worked on this project with the intention of further developing my circuit design skill using eCAD software like KiCad, and coincidentally, I needed a new keyboard at the time because my old one 
+                        have shown signs of malfunction. So I was determined to make a custom mechanical keyboard from scratch, and I decided to start working on the PCB as it is the barebone of they keyboard. While keyboard 
+                        PCB can be easily obtained by buying online, I was determined to designing my own. As mentioned earlier, I wanted to design my own PCB from scratch because I wanted to practice PCB design, but also, 
+                        I found that the process of designing it to be enjoyable and satisfying based on my past experience from classes and internship. 
                     </p>
-
                     <h1>Approach</h1>
                     <p>
-                        There were 3 steps to this project: designing the wafer with the varying orientation of the springs, fabricating the wafer, and testing each spring samples.
-                    </p>
-                    <h2>Design</h2>
-                    <p>
-                        The design of the MEMS springs wafer required writing Python's scripts to properly alignment samples in uniformed distances from each other. Since manual design is tedious and can lead to 
-                        inaccuracies, writing a script for the design is rather more efficient and precise. The script then outputs layout file, and we then used KLayout to view the wafer design. This software is great 
-                        as it not only allowed us to view the design, but also allowed us to make minor edits. By viewing the layout and noting some minor errors, we were able to make all the adjustments needed to adhere to  
-                        the fabrication constraint provided.
+                        Prior to working on this project, I already understood the basics of PCB design using eCAD software Altium from an internship. However, because this was more of a hobby project, I decided to use KiCad 
+                        becuase it has an active community and it is an open source, meaning there are an extensive numbers of libraries I can use to help me in designing the PCB. Additionally, I understood how keyboard works 
+                        at a fundamental level, so at the start, I knew what needed to work on first. One of the requirements I had set myself for this project was that I want to use the RP2040 microcontroller and integrate it 
+                        directly onto the PCB because I wanted the board to be PCB as thin as possible to ease the burden when designing the case. So this got me to look at the schematic of the development board to ensure 
+                        the integrated microcontroller will work similarly as the development board. 
                     </p>
                     <div class="project-body-img">
-                        <img src="../Images/spring_design.png" alt="MEMS Springs Wafer Layout" class="project-body-image">
+                        <img src="../Images/keyboard_pcb_schematic.png" alt="Keyboard Schematics" class="project-body-image">
                     </div>
-                    <h2>Fabrication</h2>
-                    <p>
-                        There is a dedicated wafer fabrication lab within our institution where we were able to fabricate our designed springs. Our spring design has a unique property where it requires the layer 
-                        underneath the spring's beam needed to be etched away. To ensure can achieve this result, we used a combination of photolithography and the DRIE etching technique. Photolitography is used to first implement 
-                        spring beam on the wafer only at the top layer. The DRIE technique works by applying a coating on the layer not wanting to be etched, and then an etching gas is used to etch the cavity under 
-                        the spring beams. 
-                    </p>
                     <div class="project-body-img">
-                        <img src="../Images/mems_springs_fab_procedures.png" alt="MEMS Springs Fabrication Process" class="project-body-image">
-                    </div>
-                    <h2>Test</h2>
-                    <p>
-                        Once the springs were fabricated, we were then able to run tests on the springs. This process involves placing the wafer above two spaced blocks so that the wafer is within the viewing range of 
-                        the reflected light telescope. In between the two blocks that props the wafer above goes a bluetooth speaker. The bluetooth speaker is used to output varying frequencies of sound that would help us 
-                        find the resonant frequency of the springs.
-                    </p>
-                    <div class="project-body-img">
-                        <img src="../Images/mems_springs_test_setup.png" alt="MEMS Springs Test Setup" class="project-body-image">
+                        <img src="../Images/keyboard_pcb_viewer.png" alt="Keyboard PCB" class="project-body-image">
                     </div>
                     <p>
-                        While viewing a spring through the microscope, we begin doing a frequency sweep starting from 0 Hz. We know when resonance is achieved when the reflected light pattern on the spring fades away. 
-                        We then note the frequency at which the resonance is observed and proceed with other springs.
+                        After completing my initial design, I decided to get board review from my friends at school, so they could potentially see any faults I did not see. From their comments and suggestions, I updated my design. 
+                        Once I reviewed it one more, I then uploaded my design to JLCPCB to have it fabricated, which I received in less than two weeks. 
                     </p>
-                    <div class="project-body-img">
-                        <img src="../Images/mems_springs_resonance.png" alt="MEMS Springs Resonance" class="project-body-image">
-                    </div>
-
-                    <h1>Result</h1>
-                    <p>
-                        The reason why we were noting down the resonant frequencies of the springs was because the resonance is a unique property of the spring, and since we were interested to see what effect does 
-                        adjusting the orientation have on the springs, we could use the resonant frequencies to see if there are any differences in between orientations. If there is, that suggest that there is indeed 
-                        a connection between the spring's alignment to the crystal lattice structure of the silicon wafer to the spring's property. With our sampled data, we derived a conclusion that there does exist 
-                        a correlation between orientation and the resonant frequency of the spring. As shown in the figure below, the angle represents the different offset angle at which the springs were oriented at and 
-                        the values at the bottom represent the normalized frequencies. These samples have shown that resonance were observed at different frequencies when the springs are oriented differently. As an 
-                        addition, we also ran test on springs with varying number of beams. We had additional room on our wafer, so tested this along with our original investigation. Our data also shows that the different 
-                        number of beams in a spring indicates different resonant frequencies.
-                    </p>
-                    <div class="project-body-img">
-                        <img src="../Images/mems_springs_data_result.png" alt="MEMS Springs Data Result" class="project-body-image">
-                    </div>
-
                     <h1>Challenges & Wrap-Up</h1>
-                    <p>
-                        This research was my first in-depth exploration involving microfabrication. I was interested on circuit design and had worked on projects related to it, so I thought it would be useful to learn 
-                        microfabrication and how integrated circuits (IC) are made. Although MEMS spring is not actually an IC, I do think it was equally useful as MEMS spring is used in common sensors like accelerometers 
-                        and gyroscopes. The main challenge working on this project was the fabrication process where some parts required us to do the process manually instead of a machine. This opened up opportunities for 
-                        irreversible mistakes to happen, which could affect our test data and our conclusion. 
+                    <p>Some of the challenges I encountered when designing this PCB was to fit everything while keeping the board at 2-layer. Due to the matrix structure there were times where it gets complicated to route traces 
+                        across existing ones. It took a combination of several vias that I was able to get the traces over and connect the necessary pads together. Overall, working on this board taught me a lot, not only with using 
+                        KiCad but also additional techniques I never thought about before. Unfortunately for me, I did not realize how small certain SMD components I have picked were actually, so soldering them has been challenging.
+                        However, with the PCB fabricated, that means I can design the case based on the PCB, which will make it straightforward for me to design.
                     </p>
                 </div>
             </div>

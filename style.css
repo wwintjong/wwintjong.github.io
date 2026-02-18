@@ -1527,8 +1527,17 @@ textarea.form-control {
   box-shadow: 0 5px 14px rgba(0, 0, 0, 0.15);
 }
 
+
 .project-body-image {
   max-width: 100%;
+  height: auto;
+  margin-bottom: 2rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.15);
+}
+
+.project-body-image-alt {
+  max-width: 200%;
   height: auto;
   margin-bottom: 2rem;
   border-radius: var(--radius-md);
